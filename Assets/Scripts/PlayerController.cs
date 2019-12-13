@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody myhotsexybody;
-    private Quaternion desireRot;
-    public Transform campos;
+    //private Quaternion desireRot;
+    //public Transform campos;
 
     public float speed;
     
@@ -20,9 +20,10 @@ public class PlayerController : MonoBehaviour
         float HorizMov = Input.GetAxis("Horizontal");
         float VertMov = Input.GetAxis("Vertical");
 
-        desireRot.eulerAngles = Quaternion.Euler(campos);
+        //Vector3 asdf = campos.transform.eulerAngles;
+        //desireRot.eulerAngles = Quaternion.Euler(campos.transform.eulerAngles);
         Vector3 movement = new Vector3(HorizMov, 0.0f, VertMov);
-        
-        myhotsexybody.AddForce(movement * speed);
+
+        myhotsexybody.AddRelativeForce(movement * speed);
     }
 }
