@@ -19,11 +19,14 @@ public class PlayerController : MonoBehaviour
     {
         float HorizMov = Input.GetAxis("Horizontal");
         float VertMov = Input.GetAxis("Vertical");
+        float HorizRot = Input.GetAxis("Mouse X") * 5f;
 
         //Vector3 asdf = campos.transform.eulerAngles;
         //desireRot.eulerAngles = Quaternion.Euler(campos.transform.eulerAngles);
+
         Vector3 movement = new Vector3(HorizMov, 0.0f, VertMov);
 
         myhotsexybody.AddRelativeForce(movement * speed);
+        transform.Rotate(0, HorizRot, 0);
     }
 }

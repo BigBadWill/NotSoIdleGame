@@ -12,8 +12,8 @@ public class CameraFollow : MonoBehaviour
 
     void LateUpdate()
     {
-        float movHoriz = Input.GetAxis("Mouse X") * rotatespeed;
-        transform.Rotate(0, movHoriz, 0);
+        //float movHoriz = Input.GetAxis("Mouse X") * rotatespeed;
+        //transform.Rotate(0, movHoriz, 0);
         Vector3 desirepos = camtarget.position + offset;
         Vector3 smoothpos = Vector3.SmoothDamp(transform.position, desirepos, ref velocity, smoothSpeed);
         transform.position = smoothpos;
